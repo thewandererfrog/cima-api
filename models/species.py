@@ -6,7 +6,7 @@ from .group import Group
 class Species(Model):
     id = BigAutoField(unique=True)
     name = CharField()
-    group_id = ForeignKeyField(Group.id,backref='group')
+    group_id = ForeignKeyField(Group.id)
     external_id = IntegerField()
 
     class Meta:
