@@ -1,21 +1,32 @@
 from flask import Flask
 
 from database import initialize
-from resources.groups import groups_api
-from resources.species import species_api
 
+# Import Blueprints
+import resources
+
+# Database config
 DEBUG = True
 HOST = '0.0.0.0'
 PORT = 8080
 
 app = Flask(__name__)
 
-app.register_blueprint(groups_api)
-app.register_blueprint(species_api)
+# Register blueprints
+app.register_blueprint(resources.groups_api)
+app.register_blueprint(resources.species_api)
+app.register_blueprint(resources.varieties_api)
+app.register_blueprint(resources.categories_api)
+app.register_blueprint(resources.markets_api)
+app.register_blueprint(resources.regions_api)
+app.register_blueprint(resources.calibers_api)
+app.register_blueprint(resources.packaging_api)
+app.register_blueprint(resources.products_api)
 
-@app.route('/')
-def hello_world():
-    return 'Hello'
+# Test endpoint
+@app.route('/healthy')
+def healthy():
+    return 'OK'
 
 if __name__ == '__main__':
     initialize()
