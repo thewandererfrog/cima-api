@@ -1,3 +1,5 @@
+import time
+
 from models import (
     Group,
     Species,
@@ -13,16 +15,23 @@ from .db_connect import getDB
 
 def initialize():
     DATABASE = getDB()
-    DATABASE.connect()
-    DATABASE.create_tables([
-        Group,
-        Species,
-        Variety,
-        Category,
-        Caliber,
-        Packaging,
-        Market,
-        Region,
-        Product
-        ], safe=True)
-    DATABASE.close()
+    try:
+        DATABASE.connect()
+    except Exception as e:
+        print(e)
+        time.sleep(3)
+        initialize()
+    finally:    
+        DATABASE.create_tables([
+            Group,
+            Species,
+            Variety,
+            Category,
+            Caliber,
+            Packaging,
+            Market,
+            Region,
+            Product
+            ], safe=True)
+        # Close connection    
+        DATABASE.close()

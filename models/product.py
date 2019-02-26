@@ -21,6 +21,7 @@ class Product(Model):
     caliber = ForeignKeyField(Caliber.id)
     packaging = ForeignKeyField(Packaging.id)
     market = ForeignKeyField(Market.id)
+    region = ForeignKeyField(Region.id)
     price_unit = CharField(max_length=50)
     date = DateTimeField()
     min = FloatField()
