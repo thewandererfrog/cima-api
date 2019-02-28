@@ -12,7 +12,6 @@ def getDB():
             port=5432
         )
     except Exception as e:
-        print("HERE1")
         print(e)
     else:
         time.sleep(5)
