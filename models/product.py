@@ -1,7 +1,6 @@
 from peewee import *
 
 from models import (
-    Group,
     Species,
     Variety,
     Category,
@@ -14,15 +13,14 @@ from database import getDB
 
 class Product(Model):
     id = BigAutoField(unique=True)
-    group = ForeignKeyField(Group.id)
-    species = ForeignKeyField(Species.id)
-    variety = ForeignKeyField(Variety.id)
-    category = ForeignKeyField(Category.id)
-    caliber = ForeignKeyField(Caliber.id)
-    packaging = ForeignKeyField(Packaging.id)
-    market = ForeignKeyField(Market.id)
-    region = ForeignKeyField(Region.id)
-    price_unit = CharField(max_length=50)
+    species_id = ForeignKeyField(Species.id)
+    variety_id = ForeignKeyField(Variety.id)
+    category_id = ForeignKeyField(Category.id)
+    caliber_id = ForeignKeyField(Caliber.id)
+    packaging_id = ForeignKeyField(Packaging.id)
+    market_id = ForeignKeyField(Market.id)
+    region_id = ForeignKeyField(Region.id)
+    price_unit_id = CharField(max_length=50)
     date = DateTimeField()
     min = FloatField()
     max = FloatField()
