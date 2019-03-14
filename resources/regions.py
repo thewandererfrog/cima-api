@@ -36,8 +36,8 @@ class RegionList(Resource):
             regions = [marshal(region,region_fields) 
                             for region in (
                                 Product
-                                    .select(Product.region.alias('id'),Region.name)
-                                    .join(Region, on=(Product.region == Region.id))
+                                    .select(Product.region_id.alias('id'),Region.name)
+                                    .join(Region, on=(Product.region_id == Region.id))
                                     .where(expression)
                                     .distinct().dicts()
                                 )

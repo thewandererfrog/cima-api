@@ -7,15 +7,14 @@ from models import Species
 # Output data
 species_fields = {
     'id' : fields.Integer,
-    'name' : fields.String,
-    'group_id' : fields.Integer
+    'name' : fields.String
 }
 
 class SpeciesList(Resource):
 
     def get(self,group_id):
         try:
-            species = [marshal(sp,species_fields) for sp in Species.select().where(Species.group_id == group_id).dicts()]
+            species = [marshal(sp,species_fields) for sp in Species.select(Species.id, Species.name).where(Species.group_id == group_id).dicts()]
         except Exception as e:
             print(e)
             abort(400,message="Something went wrong.")

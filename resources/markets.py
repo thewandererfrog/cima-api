@@ -37,8 +37,8 @@ class MarketList(Resource):
             markets = [marshal(market,market_fields) 
                             for market in (
                                 Product
-                                    .select(Product.market.alias('id'),Market.name)
-                                    .join(Market, on=(Product.market == Market.id))
+                                    .select(Product.market_id.alias('id'),Market.name)
+                                    .join(Market, on=(Product.market_id == Market.id))
                                     .where(expression)
                                     .distinct().dicts()
                                 )

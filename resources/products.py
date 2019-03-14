@@ -1,6 +1,7 @@
 from flask import Blueprint
 from flask_restful import Resource,Api,marshal,fields,abort,reqparse
 import json
+from peewee import fn
 
 from models import Product
 
@@ -41,8 +42,14 @@ class ProductList(Resource):
             products = [marshal(product,product_fields) 
                             for product in (
                                 Product
-                                    .select(Product.date,Product.min,Product.max,Product.mean)
+                                    .select(
+                                        Product.date,
+                                        fn.AVG(Product.min).alias('min'),
+                                        fn.AVG(Product.max).alias('max'),
+                                        fn.AVG(Product.mean).alias('mean')
+                                    )
                                     .where(expression)
+                                    .group_by(Product.date)
                                     .order_by(Product.date)
                                     .dicts()
                             )

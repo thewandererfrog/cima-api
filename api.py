@@ -1,5 +1,5 @@
 from flask import Flask
-
+from flask_cors import CORS
 from database import initialize
 
 # Import Blueprints
@@ -11,6 +11,7 @@ HOST = '0.0.0.0'
 PORT = 8080
 
 app = Flask(__name__)
+CORS(app)
 
 # Register blueprints
 app.register_blueprint(resources.groups_api)

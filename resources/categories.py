@@ -30,13 +30,14 @@ class CategoryList(Resource):
             categories = [marshal(category,category_fields) 
                             for category in (
                                 Product
-                                    .select(Product.category.alias('id'),Category.name)
-                                    .join(Category, on=(Product.category == Category.id))
+                                    .select(Product.category_id.alias('id'),Category.name)
+                                    .join(Category, on=(Product.category_id == Category.id))
                                     .where(expression)
                                     .distinct().dicts()
                                 )
                         ]
         except Exception as e:
+            print(e)
             abort(400,message="Something went wrong")  
         else:
             return { 'categories' : categories}

@@ -16,9 +16,9 @@ class VarietyList(Resource):
             varieties = [marshal(variety,variety_fields) 
                             for variety in (
                                 Product
-                                    .select(Product.variety.alias('id'),Variety.name)
-                                    .join(Variety, on=(Product.variety == Variety.id))
-                                    .where(Product.species == species_id)
+                                    .select(Product.variety_id.alias('id'),Variety.name)
+                                    .join(Variety, on=(Product.variety_id == Variety.id))
+                                    .where(Product.species_id == species_id)
                                     .distinct().dicts()
                                 )
                         ]
