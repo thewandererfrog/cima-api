@@ -44,7 +44,7 @@ class ProductList(Resource):
                                 Product
                                     .select(
                                         Product.date,
-                                        fn.AVG(Product.min).alias('min'),
+                                        fn.avg(Product.min).alias('min'),
                                         fn.AVG(Product.max).alias('max'),
                                         fn.AVG(Product.mean).alias('mean')
                                     )
