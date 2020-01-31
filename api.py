@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from database import initialize
+import os
 
 # Import Blueprints
 import resources
@@ -8,7 +9,7 @@ import resources
 # Database config
 DEBUG = True
 HOST = '0.0.0.0'
-PORT = 8080
+PORT = os.getenv('PORT')
 
 app = Flask(__name__)
 CORS(app)

@@ -1,4 +1,5 @@
 from playhouse.postgres_ext import PostgresqlExtDatabase
+import os
 import time
 
 # Connect to a Postgres database.
@@ -6,9 +7,9 @@ def getDB():
     try:
         return PostgresqlExtDatabase(
             'cima', 
-            user='cima', 
-            password='cima',
-            host='127.0.0.1', 
+            user=os.getenv('DATABASE_USER'), 
+            password=os.getenv('DATABASE_PASS'),
+            host=os.getenv('DATABASE_URL'), 
             port=5432
         )
     except Exception as e:

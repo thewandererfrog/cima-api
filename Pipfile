@@ -10,6 +10,7 @@ flask = "*"
 flask-restful = "*"
 psycopg2 = "*"
 peewee = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
