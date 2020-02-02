@@ -6,7 +6,7 @@ import os
 # Import Blueprints
 import resources
 
-# Database config
+# config
 DEBUG = True
 HOST = '0.0.0.0'
 PORT = os.getenv('PORT')
