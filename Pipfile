@@ -11,6 +11,7 @@ flask-restful = "*"
 psycopg2 = "*"
 peewee = "*"
 python-dotenv = "*"
+flask_cors = "*"
 
 [requires]
 python_version = "3.7"
