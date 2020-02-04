@@ -2,8 +2,14 @@ from playhouse.postgres_ext import PostgresqlExtDatabase
 import os
 import time
 
+global count
+count= 0
 # Connect to a Postgres database.
 def getDB():
+    global count    
+    print(count)
+    
+    count = count+1
     try:
         return PostgresqlExtDatabase(
             'cima', 
@@ -14,6 +20,6 @@ def getDB():
         )
     except Exception as e:
         print(e)
-    else:
         time.sleep(5)
-        getDB()        
+        #getDB()   
+             

@@ -19,8 +19,9 @@ def initialize():
         DATABASE.connect()
     except Exception as e:
         print(e)
+        print("Exception")
         time.sleep(3)
-        initialize()
+        #initialize()
     finally:    
         DATABASE.create_tables([
             Group,
