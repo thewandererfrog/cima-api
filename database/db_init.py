@@ -20,7 +20,6 @@ def initialize():
     except Exception as e:
         print(e)
         print("Exception")
-        time.sleep(3)
         #initialize()
     finally:    
         DATABASE.create_tables([
