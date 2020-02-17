@@ -7,7 +7,7 @@ services:
 
 before_install:
   - docker build -t cima-api .
-  - docker run cima-api
+  - docker run -d cima-api
   - docker ps -a
 
 script:
