@@ -6,7 +6,7 @@ import time
 def getDB():
     try:
         return PostgresqlExtDatabase(
-            db=os.getenv('DATABASE_DB'), 
+            os.getenv('DATABASE_DB'), 
             user=os.getenv('DATABASE_USER'), 
             password=os.getenv('DATABASE_PASS'),
             host=os.getenv('DATABASE_URL'), 
