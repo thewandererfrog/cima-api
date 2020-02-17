@@ -1,3 +1,4 @@
+import settings
 from flask import Flask
 from flask_cors import CORS
 from database import initialize
