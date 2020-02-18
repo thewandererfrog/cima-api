@@ -11,7 +11,7 @@ import resources
 
 
 # config
-DEBUG = True
+DEBUG = False
 HOST = '0.0.0.0'
 PORT = os.getenv('PORT')
 

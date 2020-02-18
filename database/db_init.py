@@ -20,7 +20,6 @@ def initialize():
         DATABASE.connect()
     except Exception as e:
         print("Exception")
-        print(e)
     finally:    
         DATABASE.create_tables([
             Group,

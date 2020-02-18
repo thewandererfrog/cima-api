@@ -26,3 +26,4 @@ class Database:
                 )
             except Exception as e:
                 print(e)                    
+
