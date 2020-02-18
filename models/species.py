@@ -9,4 +9,4 @@ class Species(Model):
     group_id = ForeignKeyField(Group.id)
 
     class Meta:
-        database = Database.getInstance("species")
+        database = Database.getInstance()

@@ -7,4 +7,4 @@ class Variety(Model):
     name = CharField()
 
     class Meta:
-        database = Database.getInstance("variety")
+        database = Database.getInstance()

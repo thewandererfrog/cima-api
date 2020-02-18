@@ -7,4 +7,4 @@ class Category(Model):
     name = CharField()
 
     class Meta:
-        database = Database.getInstance("category")
+        database = Database.getInstance()

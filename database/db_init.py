@@ -15,10 +15,7 @@ from models import (
 from .db_connect import Database
 
 def initialize():
-    print("Running init!")
-    DATABASE = Database.getInstance("init")
-    DATABASE.connect()
-    print(DATABASE)
+    DATABASE = Database.getInstance()
     try:
         DATABASE.connect()
     except Exception as e:

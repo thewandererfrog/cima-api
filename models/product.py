@@ -27,4 +27,4 @@ class Product(Model):
     mean = FloatField()
 
     class Meta:
-        database = Database.getInstance("prodcut")
+        database = Database.getInstance()

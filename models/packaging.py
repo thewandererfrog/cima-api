@@ -7,4 +7,4 @@ class Packaging(Model):
     name = CharField()
 
     class Meta:
-        database = Database.getInstance("packaging")
+        database = Database.getInstance()

@@ -9,4 +9,4 @@ class Market(Model):
     region_id = ForeignKeyField(Region.id)
 
     class Meta:
-        database = Database.getInstance("market")
+        database = Database.getInstance()

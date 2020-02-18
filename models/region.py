@@ -7,4 +7,4 @@ class Region(Model):
     name = CharField()
 
     class Meta:
-        database = Database.getInstance("region")
+        database = Database.getInstance()

@@ -7,4 +7,4 @@ class Caliber(Model):
     name = CharField()
 
     class Meta:
-        database = Database.getInstance("caliber")
+        database = Database.getInstance()
