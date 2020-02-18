@@ -9,7 +9,7 @@ from models import (
     Market,
     Region
 )
-from database import getDB
+from database import Database
 
 class Product(Model):
     id = BigAutoField(unique=True)
@@ -27,4 +27,4 @@ class Product(Model):
     mean = FloatField()
 
     class Meta:
-        database = getDB()
+        database = Database.getInstance("prodcut")

@@ -2,10 +2,13 @@ import settings
 from flask import Flask
 from flask_cors import CORS
 from database import initialize
+from database import Database
 import os
-
+import time
 # Import Blueprints
 import resources
+
+
 
 # config
 DEBUG = True
