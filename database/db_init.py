@@ -1,4 +1,5 @@
 import time
+import os
 
 from models import (
     Group,
@@ -11,16 +12,14 @@ from models import (
     Packaging,
     Product
 )
-from .db_connect import getDB
+from .db_connect import Database
 
 def initialize():
-    DATABASE = getDB()
+    DATABASE = Database.getInstance()
     try:
         DATABASE.connect()
     except Exception as e:
-        print(e)
         print("Exception")
-        #initialize()
     finally:    
         DATABASE.create_tables([
             Group,

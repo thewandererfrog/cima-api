@@ -1,6 +1,6 @@
 from peewee import *
 
-from database import getDB
+from database import Database
 from .group import Group
 
 class Species(Model):
@@ -9,4 +9,4 @@ class Species(Model):
     group_id = ForeignKeyField(Group.id)
 
     class Meta:
-        database = getDB()
+        database = Database.getInstance()

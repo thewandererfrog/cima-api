@@ -1,10 +1,10 @@
 from peewee import *
 
-from database import getDB
+from database import Database
 
 class Region(Model):
     id = BigAutoField(unique=True)
     name = CharField()
 
     class Meta:
-        database = getDB()
+        database = Database.getInstance()

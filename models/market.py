@@ -1,6 +1,6 @@
 from peewee import *
 
-from database import getDB
+from database import Database
 from .region import Region
 
 class Market(Model):
@@ -9,4 +9,4 @@ class Market(Model):
     region_id = ForeignKeyField(Region.id)
 
     class Meta:
-        database = getDB()
+        database = Database.getInstance()
